@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ComplexNumberCalculator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ServerSvc" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IComplexNumber_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Subtract_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subtract" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Subtract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Multiply_InputMessage">
+    <wsdl:part name="parameters" element="tns:Multiply" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Multiply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Divide_InputMessage">
+    <wsdl:part name="parameters" element="tns:Divide" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Divide_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Modulus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Modulus" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Modulus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModulusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Argument_InputMessage">
+    <wsdl:part name="parameters" element="tns:Argument" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Argument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArgumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Conjugate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Conjugate" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Conjugate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConjugateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Recipocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:Recipocal" />
+  </wsdl:message>
+  <wsdl:message name="IComplexNumber_Recipocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecipocalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IComplexNumber">
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Add" message="tns:IComplexNumber_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/AddResponse" message="tns:IComplexNumber_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Subtract" message="tns:IComplexNumber_Subtract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/SubtractResponse" message="tns:IComplexNumber_Subtract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Multiply" message="tns:IComplexNumber_Multiply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/MultiplyResponse" message="tns:IComplexNumber_Multiply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Divide" message="tns:IComplexNumber_Divide_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/DivideResponse" message="tns:IComplexNumber_Divide_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Modulus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Modulus" message="tns:IComplexNumber_Modulus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/ModulusResponse" message="tns:IComplexNumber_Modulus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Argument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Argument" message="tns:IComplexNumber_Argument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/ArgumentResponse" message="tns:IComplexNumber_Argument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Conjugate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Conjugate" message="tns:IComplexNumber_Conjugate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/ConjugateResponse" message="tns:IComplexNumber_Conjugate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Recipocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexNumber/Recipocal" message="tns:IComplexNumber_Recipocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexNumber/RecipocalResponse" message="tns:IComplexNumber_Recipocal_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IComplexNumber" type="tns:IComplexNumber">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Subtract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Multiply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Divide" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modulus">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Modulus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Argument">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Argument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Conjugate">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Conjugate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Recipocal">
+      <soap:operation soapAction="http://tempuri.org/IComplexNumber/Recipocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ComplexNumberCalculator">
+    <wsdl:port name="BasicHttpBinding_IComplexNumber" binding="tns:BasicHttpBinding_IComplexNumber">
+      <soap:address location="http://localhost:8081/ComplexNumberService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
